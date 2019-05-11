@@ -18,40 +18,15 @@ public class Rectangle {
     }
 
     /**
+     * @return true if this rectangle intersects with the other rectangle
+     * else return false
      * @param other: the rectangle need to check intersects with this rectangle
      * @return
      */
 
     public boolean intersects(Rectangle other) {
-//        this.position=other.position;
-//        this.width=other.width;
-//        this.height=other.height;
-        Vector2D position;
-        int width;
-        int height;
-        position = this.position;
-        width = this.width;
-        height = this.height;
         // TODO: 1. remove default return statement and fill logic check intersects 'this' and 'other'
-        //return false;
-        Rectangle rec = new Rectangle(position,width,height);
-
-
-//        Rectangle rec=new Rectangle(this.position,this.width,this.height);
-        if ((rec.position.x <= other.position.x && other.position.x <= rec.width + rec.position.x)
-                &&
-                (rec.position.y <= other.position.y && other.position.y <= rec.position.y + rec.height)
-        ) {
-            System.out.println(rec.width);
-
-            System.out.println(rec.position.x);
-            System.out.println(other.position.x);
-            return true;
-        } else {
-            return false;
-
-        }
-
+        return false;
     }
 
     public static void main(String[] args) {
