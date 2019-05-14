@@ -1,3 +1,5 @@
+package game;
+
 public class Vector2D {
     public double x;
     public double y;
@@ -41,7 +43,7 @@ public class Vector2D {
 
     public void setLength(double length) {
         double oldLength = this.getLength();
-        if(oldLength != 0) {
+        if (oldLength != 0) {
             this.x = this.x * length / oldLength;
             this.y = this.y * length / oldLength;
         }
@@ -53,7 +55,7 @@ public class Vector2D {
 
     public void setAngle(double angle) {
         double length = this.getLength();
-        if(length != 0) {
+        if (length != 0) {
             this.x = length * Math.cos(angle);
             this.y = length * Math.sin(angle);
         }

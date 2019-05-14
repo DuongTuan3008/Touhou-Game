@@ -1,26 +1,30 @@
-import tklibs.Mathx;
-import tklibs.SpriteUtils;
+package game;
+
+import game.player.Player;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 public class GamePanel extends JPanel {
     Player player;
     Background background;
-    // PlayerBullet bullet;
+    // game.player.PlayerBullet bullet;
     // ArrayList: add(), remove(), size(), get()
 
     public GamePanel() {
-        player = new Player();
         background = new Background();
+        player = new Player();
     }
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        background.render(g);
-        player.render(g);
+        for(int i = 0; i < GameObject.objects.size(); i++){
+            GameObject object = GameObject.objects.get(i);
+            if(object.active){
+                object.render(g);
+            }
+        }
     }
 
     public void gameLoop() {
@@ -38,9 +42,11 @@ public class GamePanel extends JPanel {
     }
 
     public void runAll() {
-        // player run
-        player.run();
-        // background run
-        background.run();
+        for(int i = 0; i < GameObject.objects.size(); i++){
+            GameObject object = GameObject.objects.get(i);
+            if(object.active){
+                object.run();
+            }
+        }
     }
 }

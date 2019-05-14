@@ -21,7 +21,7 @@ public class SpriteUtils {
     }
 
     public static void renderAtCenter(Graphics graphics, BufferedImage image, double x, double y) {
-        graphics.drawImage(image, (int)(x - (double)image.getWidth() / 2), (int)(y - (double) image.getHeight() / 2), null);
+        graphics.drawImage(image, (int) (x - (double) image.getWidth() / 2), (int) (y - (double) image.getHeight() / 2), null);
     }
 
     public static BufferedImage maskWhite(BufferedImage image) {
