@@ -1,12 +1,15 @@
 package game;
 
+import game.enemy.Enemy;
+import game.enemy.EnemySummoner;
 import game.player.Player;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel {
-    Player player;
+    GameObject player;
+//    Player player;
     Background background;
     // game.player.PlayerBullet bullet;
     // ArrayList: add(), remove(), size(), get()
@@ -14,17 +17,22 @@ public class GamePanel extends JPanel {
     public GamePanel() {
         background = new Background();
         player = new Player();
+//        Enemy enemy = new Enemy();
+        EnemySummoner es = new EnemySummoner();
     }
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        for(int i = 0; i < GameObject.objects.size(); i++){
+        for(int i = 0; i < GameObject.objects.size(); i++) {
             GameObject object = GameObject.objects.get(i);
-            if(object.active){
+            if(object.active) {
                 object.render(g);
             }
         }
+        // TODO: continue editing
+        g.setColor(Color.BLACK);
+        g.fillRect(384, 0, 416, 600);
     }
 
     public void gameLoop() {
@@ -42,10 +50,13 @@ public class GamePanel extends JPanel {
     }
 
     public void runAll() {
-        for(int i = 0; i < GameObject.objects.size(); i++){
+        for (int i = 0; i < GameObject.objects.size(); i++) {
             GameObject object = GameObject.objects.get(i);
-            if(object.active){
+            // Player, Background, Enemy
+            if(object.active) {
                 object.run();
+                // GameObject.run()
+                // >> Player.run(), ..
             }
         }
     }

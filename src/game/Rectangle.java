@@ -19,6 +19,18 @@ public class Rectangle {
         this.height = height;
     }
 
+    /**
+     * @return true if this rectangle intersects with the other rectangle
+     * else return false
+     * @param other: the rectangle need to check intersects with this rectangle
+     * @return
+     */
+
+    public boolean intersects(Rectangle other) {
+        // TODO: 1. remove default return statement and fill logic check intersects 'this' and 'other'
+        return false;
+    }
+
     public static void main(String[] args) {
         // TODO: 2. Run this file to test the result
         Rectangle rect1 = new Rectangle(0, 0, 5, 5);
@@ -32,15 +44,5 @@ public class Rectangle {
         // true - true
         // true - true
         // false - false
-    }
-
-    /**
-     * @param other: the rectangle need to check intersects with this rectangle
-     * @return
-     */
-
-    public boolean intersects(Rectangle other) {
-        // TODO: 1. remove default return statement and fill logic check intersects 'this' and 'other'
-        return false;
     }
 }
